@@ -2,3 +2,38 @@
        width: 200px;
        height: 200px; 
 } */
+body{
+       display: flex;
+       justify-content: center;
+}
+.chat{
+    width: 400px;
+}
+.right-side{
+   height: 25px;
+   font-size: 17px;
+   text-align: right;
+   position: relative;
+   right: 0px;
+   color: white;
+   background-color: purple;
+   border: 1px solid black !important ;
+   border-radius: 20px;
+}
+.left-side{
+       font-size: 17px;
+       height: 25px;
+       position: relative;
+       left: 0px;
+       color: white;
+       background-color: purple;
+       border: 1px solid black !important ;
+       border-radius: 20px;
+}
+#message{
+       position: fixed;
+       bottom: 20px;
+}
+ul > li {
+    list-style: none;
+}

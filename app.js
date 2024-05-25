@@ -75,57 +75,90 @@
 
 // zipcode
 
-function fillcity(){
-    var zip = document.getElementById("zip")
-    var city = document.getElementById("city")
-    switch(Number(zip.value)){
-case 2 :
-    city.value = "Kolkata"
-    break;
-    case 1 :
-        city.value = "Mumbai"
-        break;
-        case 0 :
-            city.value = "Delhi"
-            break;
-            case 3 :
-                city.value = "Chennai"
-                break;
-                case 4 :
-                    city.value = "Bangalore"
-                    break;
-                    case 5 :
-                        city.value = "Hyderabad"
-                        break;
-                        case 6 :
-                            city.value = "Ahmedabad"
-                            break;
-                            case 7 :
-                                city.value = "Pune"
-                                break;
-                                case 8 :
-                                    city.value = "Surat"
-                                    break;
-                                    case 9 :
-                                        city.value = "Jaipur"
-                                        break;
-                                        case 10 :
-                                            city.value = "Lucknow"
-                                            break;
-                                            case 11 :
-                                                city.value = "Kanpur"
-                                                break;
-                                                case 12 :
-                                                    city.value = "Nagpur"
-                                                    break;
-                                                    case 13 :
-                                                        city.value = "Indore"
-                                                        break;
-                                                        case 14 :
-                                                            city.value = "Thane"
-                                                            break;
-                    default :
-                    alert("city is not registered")
-                    break;
+// function fillcity(){
+//     var zip = document.getElementById("zip")
+//     var city = document.getElementById("city")
+//     switch(Number(zip.value)){
+// case 2 :
+//     city.value = "Kolkata"
+//     break;
+//     case 1 :
+//         city.value = "Mumbai"
+//         break;
+//         case 0 :
+//             city.value = "Delhi"
+//             break;
+//             case 3 :
+//                 city.value = "Chennai"
+//                 break;
+//                 case 4 :
+//                     city.value = "Bangalore"
+//                     break;
+//                     case 5 :
+//                         city.value = "Hyderabad"
+//                         break;
+//                         case 6 :
+//                             city.value = "Ahmedabad"
+//                             break;
+//                             case 7 :
+//                                 city.value = "Pune"
+//                                 break;
+//                                 case 8 :
+//                                     city.value = "Surat"
+//                                     break;
+//                                     case 9 :
+//                                         city.value = "Jaipur"
+//                                         break;
+//                                         case 10 :
+//                                             city.value = "Lucknow"
+//                                             break;
+//                                             case 11 :
+//                                                 city.value = "Kanpur"
+//                                                 break;
+//                                                 case 12 :
+//                                                     city.value = "Nagpur"
+//                                                     break;
+//                                                     case 13 :
+//                                                         city.value = "Indore"
+//                                                         break;
+//                                                         case 14 :
+//                                                             city.value = "Thane"
+//                                                             break;
+//                     default :
+//                     alert("city is not registered")
+//                     break;
+//     }
+// }
+
+// chatbot ai
+var list = document.getElementById("list")
+var typing = document.getElementById("typing")
+function sendMessage(){
+if(event.keyCode === 13){
+    var elem = event.target;
+    list.innerHTML += "<li> <span class='right-side'>  " + elem.value + "   </span> </li>"  
+    typing.style.display = "block";
+    if(['hi','hello','hey','is there any one'].indexOf(elem.value.toLowerCase()) !== -1){
+        setTimeout(function(){
+            list.innerHTML += "<li> <span class='left-side'>Hello !</span></li>" 
+        }, 1650)
+        setTimeout(function(){
+            list.innerHTML += "<li> <span class='left-side'>how are you?</span> </li>"  
+            typing.style.display = "none";
+        }, 3200)
     }
+    else if(['fine','alright','well','great','doing great','good','good to go','awesome','magnificent','very good'].indexOf(elem.value.toLowerCase()) !== -1){
+        setTimeout(function(){
+            list.innerHTML += "<li> <span class='left-side'>how can i help you?</span> </li>"  
+            typing.style.display = "none";
+        }, 2000)
+    }
+    else{
+        setTimeout(function(){
+            list.innerHTML += "<li> <span class='left-side'>sorry i can't understand..?</span> </li>"  
+            typing.style.display = "none";
+        }, 2000)
+    }
+    elem.value = ""
+}
 }
