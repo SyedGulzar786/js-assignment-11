@@ -11,22 +11,24 @@ body{
 }
 .right-side{
    height: 25px;
-   font-size: 17px;
+   font-size: 14px;
    text-align: right;
    position: relative;
    right: 0px;
    color: white;
    background-color: purple;
+   padding: 4px 5px;
    border: 1px solid black !important ;
    border-radius: 20px;
 }
 .left-side{
-       font-size: 17px;
        height: 25px;
+       font-size: 14px;
        position: relative;
        left: 0px;
        color: white;
        background-color: purple;
+       padding: 4px 5px;
        border: 1px solid black !important ;
        border-radius: 20px;
 }

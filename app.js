@@ -136,26 +136,26 @@ var typing = document.getElementById("typing")
 function sendMessage(){
 if(event.keyCode === 13){
     var elem = event.target;
-    list.innerHTML += "<li> <span class='right-side'>  " + elem.value + "   </span> </li>"  
+    list.innerHTML += "<li class='right' > <span class='right-side same'>  " + elem.value + "   </span> </li>"  
     typing.style.display = "block";
     if(['hi','hello','hey','is there any one'].indexOf(elem.value.toLowerCase()) !== -1){
         setTimeout(function(){
-            list.innerHTML += "<li> <span class='left-side'>Hello !</span></li>" 
+            list.innerHTML += "<li class='left'> <span class='left-side same'>Hello !</span></li>" 
         }, 1650)
         setTimeout(function(){
-            list.innerHTML += "<li> <span class='left-side'>how are you?</span> </li>"  
+            list.innerHTML += "<li class='left'> <span class='left-side same'>how are you?</span> </li>"  
             typing.style.display = "none";
         }, 3200)
     }
     else if(['fine','alright','well','great','doing great','good','good to go','awesome','magnificent','very good'].indexOf(elem.value.toLowerCase()) !== -1){
         setTimeout(function(){
-            list.innerHTML += "<li> <span class='left-side'>how can i help you?</span> </li>"  
+            list.innerHTML += "<li class='left'> <span class='left-side same'>how can i help you?</span> </li>"  
             typing.style.display = "none";
         }, 2000)
     }
     else{
         setTimeout(function(){
-            list.innerHTML += "<li> <span class='left-side'>sorry i can't understand..?</span> </li>"  
+            list.innerHTML += "<li class='left'> <span class='left-side same'>sorry i can't understand..?</span> </li>"  
             typing.style.display = "none";
         }, 2000)
     }
