@@ -131,31 +131,110 @@
 // }
 
 // chatbot ai
+
+// logic for creating an ai chat bot to make more accurate and frequent chat........!!
+
+//     if(['hi','hello','hey','is there any one'].indexOf(elem.value.toLowerCase()) !== -1)
+// var inputBox = document.getElementById("input-box")
+// var store = "";
+// var show = "";
+// var swiper = "";
+// function addEnter(event){
+//  if(event.keyCode == 13){    
+//     store = inputBox.value;
+// console.log(store)
+//     var checkin = ["hn","better",'goo','amazing','gre','th','maze','me','al','hum'];
+// for(var i = 0; i < checkin.length; i++){
+//     swiper = checkin[i]
+//     show = store.indexOf(swiper)
+//     if(show !== -1){    
+// break;
+//     }
+// }
+// if(show !== -1){    
+//     console.log(show);
+// }
+// inputBox.value = "";
+// }
+// }
+
+var store = "";
+var show = "";
+var swiper = "";
 var list = document.getElementById("list")
 var typing = document.getElementById("typing")
+var match = "first";
 function sendMessage(){
+    var count = 0;
 if(event.keyCode === 13){
     var elem = event.target;
-    list.innerHTML += "<li class='right' > <span class='right-side same'>  " + elem.value + "   </span> </li>"  
+    store = elem.value.toLowerCase();
+    list.innerHTML += "<li class='right left' > <span class='right-side same'>  " + elem.value + "   </span> </li>"  
     typing.style.display = "block";
-    if(['hi','hello','hey','is there any one'].indexOf(elem.value.toLowerCase()) !== -1){
+    var arr1 = ['hel','al','sal'];
+    var arr2 = ['fine',"hn",'alright','well',"better",'hum','goo','amazing','gre','bs','th','maze','me','great','doing','goo','fab','fant','awesome','magnificent'];
+    var arr3 = ['bt','pchh','hn','yes'];
+    for(var i = 0; i < arr1.length; i++){
+        swiper = arr1[i]
+        show = store.indexOf(swiper)
+            if(show !== -1){   
+                count = 1; 
+                break;
+                }
+                show = "";
+                swiper = "";
+    }
+    for(var i = 0; i < arr2.length; i++){
+        swiper = arr2[i]
+        show = store.indexOf(swiper)
+            if(show !== -1 && match == "first"){ 
+                count = 2;  
+                break;
+                }
+                show = "";
+                swiper = ""; 
+    }
+    for(var i = 0; i < arr3.length; i++){
+        swiper = arr3[i]
+        show = store.indexOf(swiper)
+            if(show !== -1 && match == "second"){ 
+                count = 3;  
+                break;
+                }
+                show = "";
+                swiper = ""; 
+    }
+    if(count == 1){
         setTimeout(function(){
-            list.innerHTML += "<li class='left'> <span class='left-side same'>Hello !</span></li>" 
+            list.innerHTML += "<li class='left'> <span class='left-side same'>Hmm</span></li>" 
         }, 1650)
         setTimeout(function(){
-            list.innerHTML += "<li class='left'> <span class='left-side same'>how are you?</span> </li>"  
+            list.innerHTML += "<li class='left'> <span class='left-side same'>kese ho tm?</span> </li>"  
             typing.style.display = "none";
         }, 3200)
     }
-    else if(['fine','alright','well','great','doing great','good','good to go','awesome','magnificent','very good'].indexOf(elem.value.toLowerCase()) !== -1){
+    else if(count == 2){
+        match = "second";
         setTimeout(function(){
-            list.innerHTML += "<li class='left'> <span class='left-side same'>how can i help you?</span> </li>"  
-            typing.style.display = "none";
+            list.innerHTML += "<li class='left'> <span class='left-side same'>aww</span> </li>"  
         }, 2000)
+        setTimeout(function(){
+            list.innerHTML += "<li class='left'> <span class='left-side same'>aik bt pchhn tmse ?</span> </li>"  
+            typing.style.display = "none";
+        }, 4100)
+    }
+    else if(count == 3){
+        setTimeout(function(){
+            list.innerHTML += "<li class='left'> <span class='left-side same'>nhi chrdo</span> </li>"  
+        }, 2000)
+        setTimeout(function(){
+            list.innerHTML += "<li class='left'> <span class='left-side same'>tm yqin ni kroge</span> </li>"  
+            typing.style.display = "none";
+        }, 4100)
     }
     else{
         setTimeout(function(){
-            list.innerHTML += "<li class='left'> <span class='left-side same'>sorry i can't understand..?</span> </li>"  
+            list.innerHTML += "<li class='left'> <span class='left-side same'>kya hai fazul hrktein mt kro !!</span> </li>"  
             typing.style.display = "none";
         }, 2000)
     }

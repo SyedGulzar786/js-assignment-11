@@ -21,10 +21,16 @@ body{
    border: 1px solid black !important ;
    border-radius: 20px;
 }
+.right{
+       position: relative;
+       text-align: right;
+       left: 0px;
+}
 .left-side{
        height: 25px;
        font-size: 14px;
        position: relative;
+       text-align: right;
        left: 0px;
        color: white;
        background-color: purple;
@@ -32,6 +38,7 @@ body{
        border: 1px solid black !important ;
        border-radius: 20px;
 }
+
 #message{
        position: fixed;
        bottom: 20px;
