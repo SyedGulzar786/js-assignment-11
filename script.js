@@ -1,0 +1,93 @@
+var store = "";
+var show = "";
+var swiper = "";
+var list = document.getElementById("list")
+var typing = document.getElementById("typing")
+var match = "first";
+function sendMessage(){
+    var count = 0;
+if(event.keyCode === 13){
+    var elem = event.target;
+    store = elem.value.toLowerCase();
+    list.innerHTML += "<li class='right' > <span class='right-side same'>  " + elem.value + "   </span> </li>"  
+    typing.style.display = "block";
+    var arr = "abcdefghijklmnopqrstuvwxyz"
+    var arr1 = ['hel','al','sal'];
+    var arr2 = ['fine',"hn",'alright','well',"better",'hum','goo','amazing','gre','bs','th','maze','me','great','doing','goo','fab','fant','awesome','magnificent'];
+    var arr3 = ['bt','pchh','hn','yes'];
+        for(var i = 0; i < store.length; i++){
+        for(var j = 0; j < arr.length; j++){
+     if(store.slice(i,i+2) == "hi" && store.slice(i+3,i+2) !== arr[j] && i == 0){
+              arr1.unshift("hi");
+              break;
+
+     }
+    }
+    }
+    for(var i = 0; i < arr1.length; i++){
+        swiper = arr1[i]
+        show = store.indexOf(swiper)
+            if(show !== -1){   
+                count = 1; 
+                break;
+                }
+                show = "";
+                swiper = "";
+    }
+    for(var i = 0; i < arr2.length; i++){
+        swiper = arr2[i]
+        show = store.indexOf(swiper)
+            if(show !== -1 && match == "first"){ 
+                count = 2;  
+                break;
+                }
+                show = "";
+                swiper = ""; 
+    }
+    for(var i = 0; i < arr3.length; i++){
+        swiper = arr3[i]
+        show = store.indexOf(swiper)
+            if(show !== -1 && match == "second"){ 
+                count = 3;  
+                break;
+                }
+                show = "";
+                swiper = ""; 
+    }
+    if(count == 1){
+        setTimeout(function(){
+            list.innerHTML += "<li class='left'> <span class='left-side same'>Hello..!</span></li>" 
+        }, 1650)
+        setTimeout(function(){
+            list.innerHTML += "<li class='left'> <span class='left-side same'>tm kese ho?</span> </li>"  
+            typing.style.display = "none";
+        }, 3200)
+    }
+    else if(count == 2){
+        match = "second";
+        setTimeout(function(){
+            list.innerHTML += "<li class='left'> <span class='left-side same'>aww</span> </li>"  
+        }, 2000)
+        setTimeout(function(){
+            list.innerHTML += "<li class='left'> <span class='left-side same'>aik bt pchhn tmse ?</span> </li>"  
+            typing.style.display = "none";
+        }, 4100)
+    }
+    else if(count == 3){
+        setTimeout(function(){
+            list.innerHTML += "<li class='left'> <span class='left-side same'>nhi chrdo</span> </li>"  
+        }, 2000)
+        setTimeout(function(){
+            list.innerHTML += "<li class='left'> <span class='left-side same'>tm yqin ni kroge</span> </li>"  
+            typing.style.display = "none";
+        }, 4100)
+    }
+    else{
+        setTimeout(function(){
+            list.innerHTML += "<li class='left'> <span class='left-side same'>yr kya hai fazul hrktein mt kro !!</span> </li>"  
+            typing.style.display = "none";
+        }, 2000)
+    }
+    elem.value = ""
+}
+}
